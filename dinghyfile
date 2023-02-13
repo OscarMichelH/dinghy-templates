@@ -1,6 +1,23 @@
 {
   "application": "dinghyapp",
-  "pipelines": [],
+  "pipelines": [
+  {
+        "application": "ngingx",
+        "keepWaitingPipelines": false,
+        "limitConcurrent": true,
+        "name": "Made By Armory Pipeline Template",
+        "stages": [
+          {
+            "name": "Wait",
+            "refId": "1",
+            "requisiteStageRefIds": [],
+            "type": "wait",
+            "waitTime": 10
+          }
+        ],
+        "triggers": []
+      }
+  ],
   "spec": {
     "permissions": {
       "READ": [],
@@ -8,25 +25,4 @@
       "WRITE": []
     }
   }
-},
-{
-  "application": "dinghyapp",
-  "pipelines": [
-    {
-      "application": "ngingx",
-      "keepWaitingPipelines": false,
-      "limitConcurrent": true,
-      "name": "Made By Armory Pipeline Template",
-      "stages": [
-        {
-          "name": "Wait",
-          "refId": "1",
-          "requisiteStageRefIds": [],
-          "type": "wait",
-          "waitTime": 10
-        }
-      ],
-      "triggers": []
-    }
-  ]
 }
