@@ -1,0 +1,11 @@
+{
+  "application": "{{ var "application" ?: "nginx" }}",
+  "keepWaitingPipelines": false,
+  "limitConcurrent": true,
+  "name": "Made By Armory Pipeline Templates",
+  "stages": [
+    {{ module "wait.stage.module" }},
+    {{ module "deploy.stage.module" "requisiteStageRefIds" ["1"] }}
+  ],
+  "triggers": []
+}

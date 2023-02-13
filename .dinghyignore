@@ -1,0 +1,3 @@
+README.md (ignores the README.md file)
+milton/ (ignores all files in milton directory)
+*.pdf (ignores all PDF files)
