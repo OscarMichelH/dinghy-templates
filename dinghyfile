@@ -1,5 +1,16 @@
 {
-  "application": "nginx",
+  "application": "dinghyapp",
+  "pipelines": [],
+  "spec": {
+    "permissions": {
+      "READ": [],
+      "EXECUTE": [],
+      "WRITE": []
+    }
+  }
+}
+{
+  "application": "dinghyapp",
   "pipelines": [
     {
       "application": "ngingx",
