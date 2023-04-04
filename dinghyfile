@@ -5,7 +5,7 @@
         "application": "dinghyapp",
         "keepWaitingPipelines": false,
         "limitConcurrent": true,
-        "name": "Made By Armory Pipeline Templates",
+        "name": "Made By Armory Pipeline Template",
         "stages": [
           {
             "name": "Wait",
