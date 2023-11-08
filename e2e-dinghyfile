@@ -1,28 +1,22 @@
 {
-  "{{ fromJson "{\"application\": dinghyapptesting}" }}"
+  "application": "maprangeexample",
   "pipelines": [
-  {
-        "application": "dinghyapp",
-        "keepWaitingPipelines": false,
-        "limitConcurrent": true,
-        "name": "Made By Armory Pipeline Templates",
-        "stages": [
-          {
-            "name": "Wait",
-            "refId": "1",
-            "requisiteStageRefIds": [],
-            "type": "wait",
-            "waitTime": 10
-          }
-        ],
-        "triggers": []
-      }
-  ],
-  "spec": {
-    "permissions": {
-      "READ": [],
-      "EXECUTE": [],
-      "WRITE": []
+    {
+      "name": "Loop Example",
+      "application": "maprangeexample",
+      "stages": [
+        {{ $dictdev := dict "waitTime" "10" "name" "dev" }}
+        {{ $dictqa := dict "waitTime" "20" "name" "qa" }}
+        {{ $myenvs := list $dictdev $dictqa }}
+        {{ $count := 1 }}
+        {{ range $myenvs }}
+            {{ module "stage.minimal.wait.module" "waitname"  ( get . "name" ) "waitTime" ( get . "waitTime" ) }}
+            {{ if ne $count (len $myenvs) }}
+                {{ $count = add $count 1 }}
+                ,
+            {{ end }}
+        {{ end }}
+      ]
     }
-  }
+  ]
 }
