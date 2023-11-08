@@ -1,5 +1,5 @@
 {
-  fromJson "{\"application\": dinghyapptesting}"
+  {{ fromJson "{\"application\": dinghyapptesting}" }}
   "pipelines": [
   {
         "application": "dinghyapp",
